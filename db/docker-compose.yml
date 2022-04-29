@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    container_name: postgres_db
+    image: postgres:14
+    networks:
+      - example_db
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=tiger
+      - POSTGRES_DB=example_db
+    ports:
+      - 5432:5432
+
+networks:
+  example_db:
